@@ -1,7 +1,6 @@
 import React from "react";
 import SelectRect from "./selectrect";
 import {FlatButton} from "material-ui";
-import LoadCircularProgress from "./components/circular-progress";
 
 export default class CropPanel extends React.Component {
   static displayName = "CropPanel";
@@ -15,7 +14,7 @@ export default class CropPanel extends React.Component {
     onDeleteImage: React.PropTypes.func,
     buttons: React.PropTypes.arrayOf(React.PropTypes.oneOf(['crop', 'delete', 'upload', 'refocus'])),
     loading: React.PropTypes.bool,
-    labels: React.PropTypes.object
+    labels: React.PropTypes.object.isRequired
   };
 
   constructor(attrs){
@@ -25,8 +24,6 @@ export default class CropPanel extends React.Component {
     this.updateSelection = this.updateSelection.bind(this);
     this.deleteImage = this.deleteImage.bind(this);
     this.select = this.select.bind(this);
-
-    this.state = {};
   }
 
   imgOnLoad(image) {
@@ -51,7 +48,6 @@ export default class CropPanel extends React.Component {
 
   render() {
     const {buttons = []} = this.props;
-    console.log(this, 'cropss')
     return (
       <div>
         <a className="reveal-modal-bg" style={{display: 'block'}} onClick={ this.props.cancelCrop }></a>
@@ -63,8 +59,6 @@ export default class CropPanel extends React.Component {
             aspectRatio={ this.props.aspectRatio }
             size = { this.props.size }/>
           <div className="controlGroup">
-            {this.props.loading &&
-              <LoadCircularProgress />}
             {buttons.map((button, idx)=>{
               switch (button){
                   case 'crop':
@@ -80,7 +74,6 @@ export default class CropPanel extends React.Component {
           </div>
         </div>
       </div>
-
     );
   }
 
