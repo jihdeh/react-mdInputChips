@@ -14,7 +14,9 @@ export default class CropPanel extends React.Component {
     onDeleteImage: React.PropTypes.func,
     buttons: React.PropTypes.arrayOf(React.PropTypes.oneOf(['crop', 'delete', 'upload', 'refocus'])),
     loading: React.PropTypes.bool,
-    labels: React.PropTypes.object.isRequired
+    cropLabel: React.PropTypes.string.isRequired,
+    deleteLabel: React.PropTypes.string.isRequired,
+    refocusLabel: React.PropTypes.string.isRequired
   };
 
   constructor(attrs){
@@ -62,11 +64,11 @@ export default class CropPanel extends React.Component {
             {buttons.map((button, idx)=>{
               switch (button){
                   case 'crop':
-                    return <FlatButton key={idx} primary onClick={ this.select }>{this.props.labels.crop}</FlatButton>;
+                    return <FlatButton key={idx} primary onClick={ this.select }>{this.props.cropLabel}</FlatButton>;
                   case 'delete':
-                    return <FlatButton key={idx} onClick={ this.deleteImage }>{this.props.labels.delete}</FlatButton>;
+                    return <FlatButton key={idx} onClick={ this.deleteImage }>{this.props.deleteLabel}</FlatButton>;
                   case'refocus':
-                    return <FlatButton key={idx} primary onClick={ this.select }>{this.props.labels.refocus}</FlatButton>;
+                    return <FlatButton key={idx} primary onClick={ this.select }>{this.props.refocusLabel}</FlatButton>;
                   default: return null;
                 }
               })
