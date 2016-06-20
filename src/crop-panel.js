@@ -64,11 +64,11 @@ export default class CropPanel extends React.Component {
             {buttons.map((button, idx)=>{
               switch (button){
                   case 'crop':
-                    return <FlatButton key={idx} primary onClick={ this.select }>{this.props.cropLabel}</FlatButton>;
+                    return <FlatButton key={idx} primary onClick={ this.select }>{this.props.cropLabel || 'Crop'}</FlatButton>;
                   case 'delete':
-                    return <FlatButton key={idx} onClick={ this.deleteImage }>{this.props.deleteLabel}</FlatButton>;
+                    return <FlatButton key={idx} onClick={ this.deleteImage }>{this.props.deleteLabel || 'Delete'}</FlatButton>;
                   case'refocus':
-                    return <FlatButton key={idx} primary onClick={ this.select }>{this.props.refocusLabel}</FlatButton>;
+                    return <FlatButton key={idx} primary onClick={ this.select }>{this.props.refocusLabel || 'Focus'}</FlatButton>;
                   default: return null;
                 }
               })
