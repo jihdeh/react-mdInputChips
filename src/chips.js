@@ -71,8 +71,9 @@ class Chips extends React.Component {
   }
 
   onBlurEvent(event) {
-    console.log(event, event.target)
-    return this.props.onBlur(event);
+    console.log(event.target.value, this.state.chips)
+    if(this.state.chips)
+      return this.state.chips;
   }
 
   clearInvalidChars(event) {
