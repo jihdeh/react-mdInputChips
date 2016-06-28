@@ -1,3 +1,7 @@
 {
-    "presets": ["es2015", "react", "stage-1", "stage-0"]
+    "presets": ["es2015", "react", "stage-1", "stage-0"],
+    "plugins": [["transform-assets", {
+                "extensions": ["css"],
+                "name": "[name].[ext]?[sha512:hash:base64:7]",
+              }]]
 }

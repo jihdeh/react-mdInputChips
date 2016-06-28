@@ -6,19 +6,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _dec, _class, _class2, _temp;
+var _class, _temp;
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _main = require('./style/main.css');
+var _main = 'main.css?1T5b4R8';
 
 var _main2 = _interopRequireDefault(_main);
-
-var _withStyles = require('./decorators/withStyles');
-
-var _withStyles2 = _interopRequireDefault(_withStyles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30,7 +26,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var update = _react2.default.addons.update;
 
-var Chips = (_dec = (0, _withStyles2.default)(_main2.default), _dec(_class = (_temp = _class2 = function (_React$Component) {
+var Chips = (_temp = _class = function (_React$Component) {
   _inherits(Chips, _React$Component);
 
   function Chips(props) {
@@ -180,10 +176,10 @@ var Chips = (_dec = (0, _withStyles2.default)(_main2.default), _dec(_class = (_t
   }]);
 
   return Chips;
-}(_react2.default.Component), _class2.propTypes = {
+}(_react2.default.Component), _class.propTypes = {
   chips: _react.PropTypes.array,
   max: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
   maxlength: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
   placeholder: _react.PropTypes.string
-}, _temp)) || _class);
+}, _temp);
 exports.default = Chips;

@@ -1,10 +1,8 @@
 import React, {PropTypes} from "react";
 import styles from './style/main.css';
-import withStyles from './decorators/withStyles';
 
 const update = React.addons.update;
 
-@withStyles(styles)
 class Chips extends React.Component {
   static propTypes = {
     chips: PropTypes.array,
