@@ -4,7 +4,7 @@ import React, {PropTypes} from "react";
 const update = React.addons.update;
 
 class Chips extends React.Component {
-  const propTypes = {
+  static propTypes = {
     chips: PropTypes.array,
     max: PropTypes.oneOfType([
       PropTypes.number,
@@ -101,7 +101,7 @@ class Chips extends React.Component {
     }
 
     event.target.value = '';
-  },
+  }
 
   deleteChip(chip) {
     let index = this.state.chips.indexOf(chip);
