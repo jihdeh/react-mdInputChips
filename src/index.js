@@ -1,3 +1,3 @@
-import CropPanel from "./crop-panel";
+import MdInputChips from "./chips";
 
-export default CropPanel;
+export default MdInputChips;

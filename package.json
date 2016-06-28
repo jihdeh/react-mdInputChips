@@ -1,7 +1,7 @@
 {
-  "name": "react-image-crop-tool",
-  "version": "1.1.3",
-  "description": "A react native image crop tool",
+  "name": "react-mdchips",
+  "version": "1.0.0",
+  "description": "A react material design input chips",
   "main": "index.js",
   "scripts": {
     "prepublish": "babel --plugins 'babel-plugin-transform-decorators-legacy' src --ignore __tests__ --out-dir ./dist",
@@ -17,20 +17,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:kasra-co/react-image-crop-tool.git"
+    "url": "git+https://github.com/jihdeh/react-mdInputChips.git"
   },
   "keywords": [
-    "Image",
-    "crop",
     "react",
-    "component"
+    "material",
+    "design",
+    "chips",
+    "material",
+    "ui"
   ],
-  "author": "Kasra.co",
+  "author": "Jihdeh",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kasra-co/react-image-crop-tool/issues"
+    "url": "https://github.com/jihdeh/react-mdInputChips/issues"
   },
-  "homepage": "https://github.com/kasra-co/react-image-crop-tool#readme",
+  "homepage": "https://github.com/jihdeh/react-mdInputChips#readme",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.9.0",
@@ -54,16 +56,15 @@
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
-    "sinon": "^1.17.4",
-    "material-ui": "^0.15.0"
-  },
-  "peerDependencies": {
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "sinon": "^1.17.4"
   },
   "dependencies": {
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-runtime": "^6.9.2",
+    "eslint-plugin-react": "^5.2.2",
+    "react": "^15.1.0",
+    "react-addons-update": "^15.1.0",
+    "react-dom": "^15.1.0",
     "react-tap-event-plugin": "^1.0.0"
   }
 }
