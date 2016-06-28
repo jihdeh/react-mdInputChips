@@ -129,7 +129,7 @@ class Chips extends React.Component {
       return (
         <span className="chip" key={index}>
           <span className="chip-value">{chip}</span>
-          <button type="button" className="chip-delete-button" onClick={this.deleteChip.bind(null, chip)}>x</button>
+          <button type="button" className="chip-delete-button" onClick={this.deleteChip.bind(this, chip)}>x</button>
         </span>
       );
     });

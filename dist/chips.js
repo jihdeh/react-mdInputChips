@@ -162,7 +162,7 @@ var Chips = (_temp = _class = function (_React$Component) {
           ),
           _react2.default.createElement(
             "button",
-            { type: "button", className: "chip-delete-button", onClick: _this2.deleteChip.bind(null, chip) },
+            { type: "button", className: "chip-delete-button", onClick: _this2.deleteChip.bind(_this2, chip) },
             "x"
           )
         );
