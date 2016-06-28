@@ -12,7 +12,7 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _main = "main.css?e40m00Q";
+var _main = "main.css?1T5b4R8";
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -154,15 +154,15 @@ var Chips = (_temp = _class = function (_React$Component) {
       var chips = this.state.chips.map(function (chip, index) {
         return _react2.default.createElement(
           "span",
-          { className: "mdchip", key: index },
+          { className: "chip", key: index },
           _react2.default.createElement(
             "span",
-            { className: "mdchip-value" },
+            { className: "chip-value" },
             chip
           ),
           _react2.default.createElement(
             "i",
-            { className: "mdchip-delete-button", onClick: _this2.deleteChip.bind(_this2, chip) },
+            { className: "chip-delete-button", onClick: _this2.deleteChip.bind(_this2, chip) },
             "x"
           )
         );
@@ -172,9 +172,9 @@ var Chips = (_temp = _class = function (_React$Component) {
 
       return _react2.default.createElement(
         "div",
-        { className: "mdchips", onClick: this.focusInput },
+        { className: "chips", onClick: this.focusInput },
         chips,
-        _react2.default.createElement("input", { type: "text", className: "mdchips-input", placeholder: placeholder, onKeyDown: this.onKeyDown, onKeyUp: this.clearInvalidChars })
+        _react2.default.createElement("input", { type: "text", className: "chips-input", placeholder: placeholder, onKeyDown: this.onKeyDown, onKeyUp: this.clearInvalidChars })
       );
     }
   }]);
