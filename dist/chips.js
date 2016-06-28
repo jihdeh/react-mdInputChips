@@ -12,7 +12,7 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _main = "main.css?1T5b4R8";
+var _main = "main.css?dcIBX0e";
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -161,8 +161,8 @@ var Chips = (_temp = _class = function (_React$Component) {
             chip
           ),
           _react2.default.createElement(
-            "i",
-            { className: "chip-delete-button", onClick: _this2.deleteChip.bind(_this2, chip) },
+            "button",
+            { type: "button", className: "chip-delete-button", onClick: _this2.deleteChip.bind(_this2, chip) },
             "x"
           )
         );

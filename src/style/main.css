@@ -1,6 +1,6 @@
 .chips {
   min-height: 36px;
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid #dddddd;
   line-height: 1;
   font-size: 1em;
 }
