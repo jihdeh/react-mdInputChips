@@ -127,9 +127,9 @@ class Chips extends React.Component {
   render() {
     let chips = this.state.chips.map((chip, index) => {
       return (
-        <span className="chip" key={index}>
-          <span className="chip-value">{chip}</span>
-          <i className="chip-delete-button material-icons" onClick={this.deleteChip.bind(this, chip)}>x</i>
+        <span className="mdchip" key={index}>
+          <span className="mdchip-value">{chip}</span>
+          <i className="mdchip-delete-button" onClick={this.deleteChip.bind(this, chip)}>x</i>
         </span>
       );
     });
@@ -137,9 +137,9 @@ class Chips extends React.Component {
     let placeholder = !this.props.max || chips.length < this.props.max ? this.props.placeholder : '';
 
     return (
-      <div className="chips" onClick={this.focusInput}>
+      <div className="mdchips" onClick={this.focusInput}>
         {chips}
-        <input type="text" className="chips-input" placeholder={placeholder} onKeyDown={this.onKeyDown} onKeyUp={this.clearInvalidChars} />
+        <input type="text" className="mdchips-input" placeholder={placeholder} onKeyDown={this.onKeyDown} onKeyUp={this.clearInvalidChars} />
       </div>
     );
   }

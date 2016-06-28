@@ -1,11 +1,11 @@
-.chips {
+.mdchips {
   min-height: 36px;
   border-bottom: 2px solid blue;
   line-height: 1;
   font-size: 1em;
 }
 
-.chips-input {
+.mdchips-input {
   display: inline-block;
   width: 33%;
   min-height: 36px;
@@ -16,7 +16,7 @@
   font-size: 0.9rem;
 }
 
-.chip {
+.mdchip {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -24,7 +24,7 @@
   margin-right: 25px;
   position: relative;
 }
-.chip .chip-value {
+.mdchip .mdchip-value {
   display: inline-block;
   padding: 5px;
   padding-left: 15px;
@@ -34,7 +34,7 @@
   font-weight: bold;
   border-radius: 15px 0 0 15px;
 }
-.chip .chip-delete-button {
+.mdchip .mdchip-delete-button {
   background: #555;
   color: #fff;
   border: 0;
