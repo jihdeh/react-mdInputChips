@@ -34,7 +34,7 @@ class Chips extends React.Component {
     this.focusInput = this.focusInput.bind(this);
   }
 
-  getDefaultProps() {
+  defaultProps() {
     return {
       placeholder: 'Add a chip...',
       maxlength:   20

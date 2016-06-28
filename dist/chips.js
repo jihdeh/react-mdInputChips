@@ -56,8 +56,8 @@ var Chips = (_temp = _class = function (_React$Component) {
   }
 
   _createClass(Chips, [{
-    key: "getDefaultProps",
-    value: function getDefaultProps() {
+    key: "defaultProps",
+    value: function defaultProps() {
       return {
         placeholder: 'Add a chip...',
         maxlength: 20
