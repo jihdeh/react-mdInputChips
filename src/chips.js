@@ -32,6 +32,7 @@ class Chips extends React.Component {
     this.clearInvalidChars = this.clearInvalidChars.bind(this);
     this.updateChips = this.updateChips.bind(this);
     this.focusInput = this.focusInput.bind(this);
+    this.onBlurEvent = this.onBlurEvent.bind(this);
   }
 
   defaultProps() {
@@ -67,6 +68,11 @@ class Chips extends React.Component {
         this.deleteChip(chips[chips.length - 1]);
       }
     }
+  }
+
+  onBlurEvent(event) {
+    console.log(event, event.target)
+    return this.props.onBlur(event);
   }
 
   clearInvalidChars(event) {
@@ -139,7 +145,13 @@ class Chips extends React.Component {
     return (
       <div className="chips" onClick={this.focusInput}>
         {chips}
-        <input type="text" className="chips-input" placeholder={placeholder} onKeyDown={this.onKeyDown} onKeyUp={this.clearInvalidChars} />
+        <input type="text" 
+          className="chips-input" 
+          placeholder={placeholder} 
+          onKeyDown={this.onKeyDown} 
+          onKeyUp={this.clearInvalidChars}
+          onBlur={this.onBlurEvent}
+        />
       </div>
     );
   }

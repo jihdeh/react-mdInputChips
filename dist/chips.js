@@ -12,7 +12,7 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _main = "main.css?dcIBX0e";
+var _main = "main.css?UEm46h-";
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -52,6 +52,7 @@ var Chips = (_temp = _class = function (_React$Component) {
     _this.clearInvalidChars = _this.clearInvalidChars.bind(_this);
     _this.updateChips = _this.updateChips.bind(_this);
     _this.focusInput = _this.focusInput.bind(_this);
+    _this.onBlurEvent = _this.onBlurEvent.bind(_this);
     return _this;
   }
 
@@ -93,6 +94,12 @@ var Chips = (_temp = _class = function (_React$Component) {
           this.deleteChip(chips[chips.length - 1]);
         }
       }
+    }
+  }, {
+    key: "onBlurEvent",
+    value: function onBlurEvent(event) {
+      console.log(event, event.target);
+      return this.props.onBlur(event);
     }
   }, {
     key: "clearInvalidChars",
@@ -174,7 +181,13 @@ var Chips = (_temp = _class = function (_React$Component) {
         "div",
         { className: "chips", onClick: this.focusInput },
         chips,
-        _react2.default.createElement("input", { type: "text", className: "chips-input", placeholder: placeholder, onKeyDown: this.onKeyDown, onKeyUp: this.clearInvalidChars })
+        _react2.default.createElement("input", { type: "text",
+          className: "chips-input",
+          placeholder: placeholder,
+          onKeyDown: this.onKeyDown,
+          onKeyUp: this.clearInvalidChars,
+          onBlur: this.onBlurEvent
+        })
       );
     }
   }]);

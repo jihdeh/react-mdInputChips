@@ -7,13 +7,13 @@
 
 .chips-input {
   display: inline-block;
-  width: 33%;
+  width: 33% !important;
   min-height: 36px;
-  margin-bottom: 5px;
-  margin-left: 10px;
+  margin: 0 0 5px 10px !important;
   border: 0;
   outline: none;
   font-size: 0.9rem;
+  border-bottom: none !important;
 }
 
 .chip {
@@ -23,10 +23,12 @@
   margin-left: 5px;
   margin-right: 25px;
   position: relative;
+  padding: 0;
+  height: 32px;
 }
 .chip .chip-value {
   display: inline-block;
-  padding: 5px;
+  // padding: 5px;
   padding-left: 15px;
   padding-right: 7.5px;
   background: #555;
