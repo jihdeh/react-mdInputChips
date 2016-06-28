@@ -98,7 +98,7 @@ var Chips = (_temp = _class = function (_React$Component) {
   }, {
     key: "onBlurEvent",
     value: function onBlurEvent(event) {
-      console.log(event.target.value, this.state.chips);
+      console.log(event.target.value, "heeee", this.state.chips);
       if (this.state.chips) return this.state.chips;
     }
   }, {
