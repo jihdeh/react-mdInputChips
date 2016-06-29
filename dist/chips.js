@@ -175,10 +175,10 @@ var Chips = (_temp = _class = function (_React$Component) {
       });
 
       var placeholder = !this.props.max || chips.length < this.props.max ? this.props.placeholder : '';
-
+      var customClassName = this.props.className;
       return _react2.default.createElement(
         "div",
-        { className: "chips", onClick: this.focusInput },
+        { className: "chips " + customClassName, onClick: this.focusInput },
         chips,
         _react2.default.createElement("input", { type: "text",
           className: "chips-input",
