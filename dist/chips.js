@@ -12,7 +12,7 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _main = "main.css?UEm46h-";
+var _main = "main.css?vBcc_st";
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -175,8 +175,8 @@ var Chips = (_temp = _class = function (_React$Component) {
       });
 
       var placeholder = !this.props.max || chips.length < this.props.max ? this.props.placeholder : '';
-      var customClassName = this.props.containerClassName;
-      var inputClassName = this.props.inputClassName;
+      var customClassName = this.props.containerClassName || "";
+      var inputClassName = this.props.inputClassName || "";
       return _react2.default.createElement(
         "div",
         { className: "chips " + customClassName, onClick: this.focusInput },

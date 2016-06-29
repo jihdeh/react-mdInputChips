@@ -143,8 +143,8 @@ class Chips extends React.Component {
     });
   
     let placeholder = !this.props.max || chips.length < this.props.max ? this.props.placeholder : '';
-    let customClassName = this.props.containerClassName;
-    let inputClassName = this.props.inputClassName;
+    let customClassName = this.props.containerClassName || "";
+    let inputClassName = this.props.inputClassName || "";
     return (
       <div className={"chips " + customClassName} onClick={this.focusInput}>
         {chips}
