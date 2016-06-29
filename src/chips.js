@@ -14,7 +14,9 @@ class Chips extends React.Component {
       PropTypes.number,
       PropTypes.string
     ]),
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    inputClassName: PropTypes.string,
+    containerClassName: PropTypes.string
   }
   constructor(props) {
     super(props);
@@ -141,12 +143,13 @@ class Chips extends React.Component {
     });
   
     let placeholder = !this.props.max || chips.length < this.props.max ? this.props.placeholder : '';
-    let customClassName = this.props.className;
+    let customClassName = this.props.containerClassName;
+    let inputClassName = this.props.inputClassName;
     return (
       <div className={"chips " + customClassName} onClick={this.focusInput}>
         {chips}
         <input type="text" 
-          className="chips-input" 
+          className={"chips-input " + inputClassName} 
           placeholder={placeholder} 
           onKeyDown={this.onKeyDown} 
           onKeyUp={this.clearInvalidChars}

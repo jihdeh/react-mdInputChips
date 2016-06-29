@@ -175,13 +175,14 @@ var Chips = (_temp = _class = function (_React$Component) {
       });
 
       var placeholder = !this.props.max || chips.length < this.props.max ? this.props.placeholder : '';
-      var customClassName = this.props.className;
+      var customClassName = this.props.containerClassName;
+      var inputClassName = this.props.inputClassName;
       return _react2.default.createElement(
         "div",
         { className: "chips " + customClassName, onClick: this.focusInput },
         chips,
         _react2.default.createElement("input", { type: "text",
-          className: "chips-input",
+          className: "chips-input " + inputClassName,
           placeholder: placeholder,
           onKeyDown: this.onKeyDown,
           onKeyUp: this.clearInvalidChars,
@@ -196,6 +197,8 @@ var Chips = (_temp = _class = function (_React$Component) {
   chips: _react.PropTypes.array,
   max: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
   maxlength: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
-  placeholder: _react.PropTypes.string
+  placeholder: _react.PropTypes.string,
+  inputClassName: _react.PropTypes.string,
+  containerClassName: _react.PropTypes.string
 }, _temp);
 exports.default = Chips;
