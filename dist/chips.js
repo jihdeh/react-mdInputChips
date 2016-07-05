@@ -122,6 +122,8 @@ var Chips = (_temp = _class = function (_React$Component) {
             })
           });
         }
+        console.log(this.state, '------');
+        this.props.onEnter(this.state.chips);
       }
 
       event.target.value = '';
