@@ -61,6 +61,7 @@ class Chips extends React.Component {
         (keyPressed === this.state.KEY.tab && event.target.value)) {
       event.preventDefault();
       this.updateChips(event);
+      this.props.onEnter(this.state.chips);
     } else if (keyPressed === this.state.KEY.backspace) {
       let chips = this.state.chips;
 
@@ -104,8 +105,6 @@ class Chips extends React.Component {
           )
         });
       }
-    console.log(this.state, '------')
-    this.props.onEnter(this.state.chips);
     }
 
     event.target.value = '';

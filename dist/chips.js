@@ -81,6 +81,7 @@ var Chips = (_temp = _class = function (_React$Component) {
       if (keyPressed === this.state.KEY.enter || keyPressed === this.state.KEY.tab && event.target.value) {
         event.preventDefault();
         this.updateChips(event);
+        this.props.onEnter(this.state.chips);
       } else if (keyPressed === this.state.KEY.backspace) {
         var chips = this.state.chips;
 
@@ -122,8 +123,6 @@ var Chips = (_temp = _class = function (_React$Component) {
             })
           });
         }
-        console.log(this.state, '------');
-        this.props.onEnter(this.state.chips);
       }
 
       event.target.value = '';
