@@ -22,19 +22,22 @@ import MdInputChips from "react-mdchips";
 <MdInputChips 
   placeholder="React Tags" 
   containerClassName="outer-tags-div"
-  chips={array.tags}
+  chips=["xx", "cv"]
   inputClassName="tags-input"
   max="10"
-  onBlur={this.onTextChange.bind(this, {type: "tag"})}
+  onBlur={this.onBlurEvt.bind(this)}
+  onEnter={this.onEnterEvt.bind(this)}
 />
 
 ```
 
 Props | Descrition
 --- | ---
-placeholder | Default input text you want to display to the user
-chips | An array of tags e.g ["xx"]. This is populated after the user clicks enter
-containerClassName | Custom classname to style the outer layer of the whole chips
-inputClassName | You can add your custom class name to style the input text box
-max | Integer - Max Number of chips you want to allow
+placeholder | Default input text you want to display to the user. (optional)
+chips | You can use this to display a default array of chips e.g ["xx", "cv"]. (optional)
+containerClassName | Custom classname to style the outer layer of the whole chips. (optional)
+inputClassName | You can add your custom class name to style the input text box. (optional)
+max | Integer - Max Number of chips you want to allow. (optional, default: 20)
+onBlur | function - Accept function that returns array of chips on blur event
+onEnter | function - Accept function that returns array of chips on enter keypress or tab event
 
