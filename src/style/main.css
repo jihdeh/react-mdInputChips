@@ -30,7 +30,6 @@
 
 .chip .chip-value {
   display: inline-block;
-  // padding: 5px;
   padding-left: 15px;
   padding-right: 7.5px;
   background: #555;

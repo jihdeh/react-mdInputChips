@@ -1,7 +1,5 @@
 import React, {PropTypes} from "react";
-import styles from "./style/main.css";
 import update from "react-addons-update";
-// const update = React.addons.update;
 
 class Chips extends React.Component {
   static propTypes = {
