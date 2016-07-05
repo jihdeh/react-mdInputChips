@@ -92,7 +92,7 @@ var Chips = (_temp = _class = function (_React$Component) {
   }, {
     key: "onBlurEvent",
     value: function onBlurEvent(event) {
-      if (this.state.chips) return this.props.onBlur(this.state.chips);
+      if (this.state.chips && this.props.onBlur) return this.props.onBlur(this.state.chips);
     }
   }, {
     key: "clearInvalidChars",

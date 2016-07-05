@@ -104,6 +104,8 @@ class Chips extends React.Component {
           )
         });
       }
+    console.log(this.state, '------')
+    this.props.onEnter(this.state.chips);
     }
 
     event.target.value = '';
