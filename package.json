@@ -1,11 +1,11 @@
 {
   "name": "react-mdchips",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A react material design input chips",
   "main": "index.js",
   "scripts": {
     "prepublish": "babel --plugins 'babel-plugin-transform-decorators-legacy' src --ignore __tests__ --out-dir ./dist",
-    "dev": "babel --plugins 'babel-plugin-transform-decorators-legacy' src --ignore __tests__ --out-dir ./dist && cp -r src/style dist",
+    "dev": "babel --plugins 'babel-plugin-transform-decorators-legacy' src --ignore __tests__ --out-dir ./dist",
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix",
     "testonly": "mocha $npm_package_options_mocha",

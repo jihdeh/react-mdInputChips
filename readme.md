@@ -5,14 +5,17 @@
 ![ScreenShot](/shots.png?raw=true)
 
 
-##Usage
+##Getting Started
 
 ```
 npm install react-mdchips
 bower install react-mdchips
 ```
+
+##Usage
+
 In your html file, make sure to include the [materializeCss](http://materializecss.com/) file 
-Also please add [this css](https://github.com/jihdeh/react-mdInputChips/blob/master/src/style/main.css) file, which you can customize to your taste. Note: Add it below the materializeCss file.
+Also please add [this css](https://github.com/jihdeh/react-mdInputChips/blob/master/src/style/main.css) file, which you can customize to your taste. Note: Add the css file below the materializeCss file.
 
 ```
 import MdInputChips from "react-mdchips";
