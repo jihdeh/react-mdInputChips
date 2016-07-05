@@ -3,6 +3,7 @@
 
 ![Deps](https://img.shields.io/badge/dependencies-up--to--date-green.svg)
 ![ScreenShot](/shots.png?raw=true)
+![DEMO](https://react-mdchips.herokuapp.com/)
 
 
 ##Getting Started
