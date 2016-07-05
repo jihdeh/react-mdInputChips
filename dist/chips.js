@@ -47,6 +47,7 @@ var Chips = (_temp = _class = function (_React$Component) {
     _this.updateChips = _this.updateChips.bind(_this);
     _this.focusInput = _this.focusInput.bind(_this);
     _this.onBlurEvent = _this.onBlurEvent.bind(_this);
+    _this.onEnterEvent = _this.onEnterEvent.bind(_this);
     return _this;
   }
 
@@ -81,7 +82,6 @@ var Chips = (_temp = _class = function (_React$Component) {
       if (keyPressed === this.state.KEY.enter || keyPressed === this.state.KEY.tab && event.target.value) {
         event.preventDefault();
         this.updateChips(event);
-        this.props.onEnter(this.state.chips);
       } else if (keyPressed === this.state.KEY.backspace) {
         var chips = this.state.chips;
 
@@ -96,10 +96,14 @@ var Chips = (_temp = _class = function (_React$Component) {
       if (this.state.chips && this.props.onBlur) return this.props.onBlur(this.state.chips);
     }
   }, {
+    key: "onEnterEvent",
+    value: function onEnterEvent(event) {
+      if (this.state.chips && this.props.onEnter) return this.props.onEnter(this.state.chips);
+    }
+  }, {
     key: "clearInvalidChars",
     value: function clearInvalidChars(event) {
       var value = event.target.value;
-
       if (this.state.INVALID_CHARS.test(value)) {
         event.target.value = value.replace(this.state.INVALID_CHARS, '');
       } else if (value.length > this.props.maxlength) {
@@ -122,9 +126,9 @@ var Chips = (_temp = _class = function (_React$Component) {
               $push: [chip]
             })
           });
+          this.onEnterEvent(this.state.chips.push(chip));
         }
       }
-
       event.target.value = '';
     }
   }, {

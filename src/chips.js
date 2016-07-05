@@ -33,6 +33,7 @@ class Chips extends React.Component {
     this.updateChips = this.updateChips.bind(this);
     this.focusInput = this.focusInput.bind(this);
     this.onBlurEvent = this.onBlurEvent.bind(this);
+    this.onEnterEvent = this.onEnterEvent.bind(this);
   }
 
   defaultProps() {
@@ -61,7 +62,6 @@ class Chips extends React.Component {
         (keyPressed === this.state.KEY.tab && event.target.value)) {
       event.preventDefault();
       this.updateChips(event);
-      this.props.onEnter(this.state.chips);
     } else if (keyPressed === this.state.KEY.backspace) {
       let chips = this.state.chips;
 
@@ -76,9 +76,13 @@ class Chips extends React.Component {
       return this.props.onBlur(this.state.chips);
   }
 
+  onEnterEvent(event) {
+    if(this.state.chips && this.props.onEnter)
+      return this.props.onEnter(this.state.chips);
+  }
+
   clearInvalidChars(event) {
     let value = event.target.value;
-
     if (this.state.INVALID_CHARS.test(value)) {
       event.target.value = value.replace(this.state.INVALID_CHARS, '');
     } else if (value.length > this.props.maxlength) {
@@ -104,9 +108,9 @@ class Chips extends React.Component {
             }
           )
         });
+        this.onEnterEvent(this.state.chips.push(chip))
       }
     }
-
     event.target.value = '';
   }
 
