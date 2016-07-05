@@ -71,7 +71,7 @@ class Chips extends React.Component {
   }
 
   onBlurEvent(event) {
-    if(this.state.chips)
+    if(this.state.chips && this.props.onBlur)
       return this.props.onBlur(this.state.chips);
   }
 
