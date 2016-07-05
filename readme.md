@@ -1,25 +1,20 @@
-# react-image-select-tool
-A react component for cropping images.
+# Material Design Input Chips
+
 
 ![Deps](https://img.shields.io/badge/dependencies-up--to--date-green.svg)
-
+![ScreenShot](/shots.png?raw=true)
 
 
 ##Usage
 
 ```
+npm install react-mdchips
+bower install react-mdchips
+```
 
-import CropPanel from "react-image-crop-tool";
+```
+import MdInputChips from "react-mdchips";
 
-<CropPanel
-  originalSrc={this.state.original || this.props.original}
-  onSelectRegion={this.cropRegion} //required
-  cancelCrop={this.endCrop} //required
-  aspectRatio={this.props.aspectRatio}
-  size={this.props.size} //required
-  onDeleteImage={this.onCancelCropImage || false}
-  labels={this.labels}
-  buttons={this.props.cropPanelButtons || this.props.buttons}/>)
 
 ```
 
