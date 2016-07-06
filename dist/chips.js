@@ -142,7 +142,7 @@ var Chips = (_temp = _class = function (_React$Component) {
             $splice: [[index, 1]]
           })
         });
-        this.onBlurEvent(this.state.splice(index, 1));
+        this.onBlurEvent(this.state.chips.splice(index, 1));
       }
     }
   }, {
