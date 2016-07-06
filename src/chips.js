@@ -71,12 +71,12 @@ class Chips extends React.Component {
     }
   }
 
-  onBlurEvent(event) {
+  onBlurEvent() {
     if(this.state.chips && this.props.onBlur)
       return this.props.onBlur(this.state.chips);
   }
 
-  onEnterEvent(event) {
+  onEnterEvent() {
     if(this.state.chips && this.props.onEnter)
       return this.props.onEnter(this.state.chips);
   }
@@ -126,6 +126,7 @@ class Chips extends React.Component {
           }
         )
       });
+      this.onBlurEvent(this.state.splice(index, 1));
     }
   }
   
