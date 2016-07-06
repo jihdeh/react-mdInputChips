@@ -92,12 +92,12 @@ var Chips = (_temp = _class = function (_React$Component) {
     }
   }, {
     key: "onBlurEvent",
-    value: function onBlurEvent(event) {
+    value: function onBlurEvent() {
       if (this.state.chips && this.props.onBlur) return this.props.onBlur(this.state.chips);
     }
   }, {
     key: "onEnterEvent",
-    value: function onEnterEvent(event) {
+    value: function onEnterEvent() {
       if (this.state.chips && this.props.onEnter) return this.props.onEnter(this.state.chips);
     }
   }, {
@@ -142,6 +142,7 @@ var Chips = (_temp = _class = function (_React$Component) {
             $splice: [[index, 1]]
           })
         });
+        this.onBlurEvent(this.state.splice(index, 1));
       }
     }
   }, {
