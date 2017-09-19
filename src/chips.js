@@ -1,5 +1,5 @@
-import React, {PropTypes} from "react";
-import update from "react-addons-update";
+import React, { PropTypes } from 'react'
+import update from 'react-addons-update'
 
 class Chips extends React.Component {
   static propTypes = {
@@ -16,88 +16,89 @@ class Chips extends React.Component {
     inputClassName: PropTypes.string,
     containerClassName: PropTypes.string
   }
+
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       chips: [],
-      KEY:   {
+      KEY: {
         backspace: 8,
-        tab:       9,
-        enter:     13
+        tab: 9,
+        enter: 13
       },
       // only allow letters, numbers and spaces inbetween words
       INVALID_CHARS: /[^a-zA-Z0-9 ]/g
     }
-    this.onKeyDown = this.onKeyDown.bind(this);
-    this.clearInvalidChars = this.clearInvalidChars.bind(this);
-    this.updateChips = this.updateChips.bind(this);
-    this.focusInput = this.focusInput.bind(this);
-    this.onBlurEvent = this.onBlurEvent.bind(this);
-    this.onEnterEvent = this.onEnterEvent.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this)
+    this.clearInvalidChars = this.clearInvalidChars.bind(this)
+    this.updateChips = this.updateChips.bind(this)
+    this.focusInput = this.focusInput.bind(this)
+    this.onBlurEvent = this.onBlurEvent.bind(this)
+    this.onEnterEvent = this.onEnterEvent.bind(this)
   }
 
   defaultProps() {
     return {
       placeholder: 'Add a chip...',
-      maxlength:   20
-    };
+      maxlength: 20
+    }
   }
 
   componentDidMount() {
-    this.setChips(this.props.chips);
+    this.setChips(this.props.chips)
   }
-  
+
   componentWillReceiveProps(nextProps) {
-    this.setChips(nextProps.chips);
+    this.setChips(nextProps.chips)
   }
-  
+
   setChips(chips) {
-    if (chips && chips.length) this.setState({ chips });
+    if (chips && chips.length) this.setState({ chips })
   }
 
   onKeyDown(event) {
-    let keyPressed = event.which;
+    let keyPressed = event.which
 
     if (keyPressed === this.state.KEY.enter ||
-        (keyPressed === this.state.KEY.tab && event.target.value)) {
-      event.preventDefault();
-      this.updateChips(event);
+      (keyPressed === this.state.KEY.tab && event.target.value)) {
+      event.preventDefault()
+      this.updateChips(event)
     } else if (keyPressed === this.state.KEY.backspace) {
-      let chips = this.state.chips;
+      let chips = this.state.chips
 
       if (!event.target.value && chips.length) {
-        this.deleteChip(chips[chips.length - 1]);
+        this.deleteChip(chips[chips.length - 1])
       }
     }
   }
 
   onBlurEvent() {
-    if(this.state.chips && this.props.onBlur)
-      return this.props.onBlur(this.state.chips);
+    if (this.state.chips && this.props.onBlur)
+      return this.props.onBlur(this.state.chips)
   }
 
   onEnterEvent() {
-    if(this.state.chips && this.props.onEnter)
-      return this.props.onEnter(this.state.chips);
+    if (this.state.chips && this.props.onEnter)
+      return this.props.onEnter(this.state.chips)
   }
 
   clearInvalidChars(event) {
-    let value = event.target.value;
+    let value = event.target.value
     if (this.state.INVALID_CHARS.test(value)) {
-      event.target.value = value.replace(this.state.INVALID_CHARS, '');
+      event.target.value = value.replace(this.state.INVALID_CHARS, '')
     } else if (value.length > this.props.maxlength) {
-      event.target.value = value.substr(0, this.props.maxlength);
+      event.target.value = value.substr(0, this.props.maxlength)
     }
   }
 
   updateChips(event) {
-    if (!this.props.max || 
-        this.state.chips.length < this.props.max) { 
-      let value = event.target.value;
+    if (!this.props.max ||
+      this.state.chips.length < this.props.max) {
+      let value = event.target.value
 
-      if (!value) return;
+      if (!value) return
 
-      let chip = value.trim().toLowerCase();
+      let chip = value.trim().toLowerCase()
 
       if (chip && this.state.chips.indexOf(chip) < 0) {
         this.setState({
@@ -107,16 +108,16 @@ class Chips extends React.Component {
               $push: [chip]
             }
           )
-        });
+        })
         this.onEnterEvent(this.state.chips.push(chip))
       }
     }
-    event.target.value = '';
+    event.target.value = ''
   }
 
   deleteChip(chip) {
-    let index = this.state.chips.indexOf(chip);
-    
+    let index = this.state.chips.indexOf(chip)
+
     if (index >= 0) {
       this.setState({
         chips: update(
@@ -125,16 +126,19 @@ class Chips extends React.Component {
             $splice: [[index, 1]]
           }
         )
-      });
-      this.onBlurEvent(this.state.chips.splice(index, 1));
-      this.props.onDelete(this.state.chips);
+      })
+      this.onBlurEvent(this.state.chips.splice(index, 1))
+
+      if (this.props.onDelete && typeof this.props.onDelete === 'function') {
+        this.props.onDelete(this.state.chips)
+      }
     }
   }
-  
+
   focusInput(event) {
-    let children = event.target.children;
-    
-    if (children.length) children[children.length - 1].focus();
+    let children = event.target.children
+
+    if (children.length) children[children.length - 1].focus()
   }
 
   render() {
@@ -144,25 +148,25 @@ class Chips extends React.Component {
           <span className="chip-value">{chip}</span>
           <button type="button" className="chip-delete-button" onClick={this.deleteChip.bind(this, chip)}>x</button>
         </span>
-      );
-    });
-  
-    let placeholder = !this.props.max || chips.length < this.props.max ? this.props.placeholder : '';
-    let customClassName = this.props.containerClassName || "";
-    let inputClassName = this.props.inputClassName || "";
+      )
+    })
+
+    let placeholder = !this.props.max || chips.length < this.props.max ? this.props.placeholder : ''
+    let customClassName = this.props.containerClassName || ''
+    let inputClassName = this.props.inputClassName || ''
     return (
-      <div className={"chips " + customClassName} onClick={this.focusInput}>
+      <div className={'chips ' + customClassName} onClick={this.focusInput}>
         {chips}
-        <input type="text" 
-          className={"chips-input " + inputClassName} 
-          placeholder={placeholder} 
-          onKeyDown={this.onKeyDown} 
-          onKeyUp={this.clearInvalidChars}
-          onBlur={this.onBlurEvent}
+        <input type="text"
+               className={'chips-input ' + inputClassName}
+               placeholder={placeholder}
+               onKeyDown={this.onKeyDown}
+               onKeyUp={this.clearInvalidChars}
+               onBlur={this.onBlurEvent}
         />
       </div>
-    );
+    )
   }
 }
 
-export default Chips;
+export default Chips

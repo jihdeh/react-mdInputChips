@@ -1,6 +1,6 @@
 {
   "name": "pb-react-mdchips",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A react material design input chips",
   "main": "index.js",
   "scripts": {
