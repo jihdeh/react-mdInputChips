@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -8,11 +8,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp;
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactAddonsUpdate = require("react-addons-update");
+var _reactAddonsUpdate = require('react-addons-update');
 
 var _reactAddonsUpdate2 = _interopRequireDefault(_reactAddonsUpdate);
 
@@ -30,7 +30,7 @@ var Chips = (_temp = _class = function (_React$Component) {
   function Chips(props) {
     _classCallCheck(this, Chips);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Chips).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Chips.__proto__ || Object.getPrototypeOf(Chips)).call(this, props));
 
     _this.state = {
       chips: [],
@@ -52,7 +52,7 @@ var Chips = (_temp = _class = function (_React$Component) {
   }
 
   _createClass(Chips, [{
-    key: "defaultProps",
+    key: 'defaultProps',
     value: function defaultProps() {
       return {
         placeholder: 'Add a chip...',
@@ -60,22 +60,22 @@ var Chips = (_temp = _class = function (_React$Component) {
       };
     }
   }, {
-    key: "componentDidMount",
+    key: 'componentDidMount',
     value: function componentDidMount() {
       this.setChips(this.props.chips);
     }
   }, {
-    key: "componentWillReceiveProps",
+    key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       this.setChips(nextProps.chips);
     }
   }, {
-    key: "setChips",
+    key: 'setChips',
     value: function setChips(chips) {
       if (chips && chips.length) this.setState({ chips: chips });
     }
   }, {
-    key: "onKeyDown",
+    key: 'onKeyDown',
     value: function onKeyDown(event) {
       var keyPressed = event.which;
 
@@ -91,17 +91,17 @@ var Chips = (_temp = _class = function (_React$Component) {
       }
     }
   }, {
-    key: "onBlurEvent",
+    key: 'onBlurEvent',
     value: function onBlurEvent() {
       if (this.state.chips && this.props.onBlur) return this.props.onBlur(this.state.chips);
     }
   }, {
-    key: "onEnterEvent",
+    key: 'onEnterEvent',
     value: function onEnterEvent() {
       if (this.state.chips && this.props.onEnter) return this.props.onEnter(this.state.chips);
     }
   }, {
-    key: "clearInvalidChars",
+    key: 'clearInvalidChars',
     value: function clearInvalidChars(event) {
       var value = event.target.value;
       if (this.state.INVALID_CHARS.test(value)) {
@@ -111,7 +111,7 @@ var Chips = (_temp = _class = function (_React$Component) {
       }
     }
   }, {
-    key: "updateChips",
+    key: 'updateChips',
     value: function updateChips(event) {
       if (!this.props.max || this.state.chips.length < this.props.max) {
         var value = event.target.value;
@@ -132,7 +132,7 @@ var Chips = (_temp = _class = function (_React$Component) {
       event.target.value = '';
     }
   }, {
-    key: "deleteChip",
+    key: 'deleteChip',
     value: function deleteChip(chip) {
       var index = this.state.chips.indexOf(chip);
 
@@ -143,46 +143,50 @@ var Chips = (_temp = _class = function (_React$Component) {
           })
         });
         this.onBlurEvent(this.state.chips.splice(index, 1));
+
+        if (this.props.onDelete && typeof this.props.onDelete === 'function') {
+          this.props.onDelete(this.state.chips);
+        }
       }
     }
   }, {
-    key: "focusInput",
+    key: 'focusInput',
     value: function focusInput(event) {
       var children = event.target.children;
 
       if (children.length) children[children.length - 1].focus();
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       var _this2 = this;
 
       var chips = this.state.chips.map(function (chip, index) {
         return _react2.default.createElement(
-          "span",
-          { className: "chip", key: index },
+          'span',
+          { className: 'chip', key: index },
           _react2.default.createElement(
-            "span",
-            { className: "chip-value" },
+            'span',
+            { className: 'chip-value' },
             chip
           ),
           _react2.default.createElement(
-            "button",
-            { type: "button", className: "chip-delete-button", onClick: _this2.deleteChip.bind(_this2, chip) },
-            "x"
+            'button',
+            { type: 'button', className: 'chip-delete-button', onClick: _this2.deleteChip.bind(_this2, chip) },
+            'x'
           )
         );
       });
 
       var placeholder = !this.props.max || chips.length < this.props.max ? this.props.placeholder : '';
-      var customClassName = this.props.containerClassName || "";
-      var inputClassName = this.props.inputClassName || "";
+      var customClassName = this.props.containerClassName || '';
+      var inputClassName = this.props.inputClassName || '';
       return _react2.default.createElement(
-        "div",
-        { className: "chips " + customClassName, onClick: this.focusInput },
+        'div',
+        { className: 'chips ' + customClassName, onClick: this.focusInput },
         chips,
-        _react2.default.createElement("input", { type: "text",
-          className: "chips-input " + inputClassName,
+        _react2.default.createElement('input', { type: 'text',
+          className: 'chips-input ' + inputClassName,
           placeholder: placeholder,
           onKeyDown: this.onKeyDown,
           onKeyUp: this.clearInvalidChars,
