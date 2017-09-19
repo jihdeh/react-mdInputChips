@@ -28,7 +28,7 @@ import MdInputChips from "react-mdchips";
   max="10"
   onBlur={this.onBlurEvt.bind(this)}
   onEnter={this.onEnterEvt.bind(this)}
-    onEnter={this.onEnterEvt.bind(this)}
+  onDelete={this.onDeleteEvt.bind(this)}
 />
 
 ```

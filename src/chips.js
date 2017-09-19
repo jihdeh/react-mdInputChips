@@ -127,7 +127,7 @@ class Chips extends React.Component {
         )
       });
       this.onBlurEvent(this.state.chips.splice(index, 1));
-      this.props.onDelete();
+      this.props.onDelete(this.state.chips);
     }
   }
   
