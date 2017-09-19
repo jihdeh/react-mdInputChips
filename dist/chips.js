@@ -30,7 +30,7 @@ var Chips = (_temp = _class = function (_React$Component) {
   function Chips(props) {
     _classCallCheck(this, Chips);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Chips).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Chips.__proto__ || Object.getPrototypeOf(Chips)).call(this, props));
 
     _this.state = {
       chips: [],
@@ -143,6 +143,7 @@ var Chips = (_temp = _class = function (_React$Component) {
           })
         });
         this.onBlurEvent(this.state.chips.splice(index, 1));
+        this.props.onDelete();
       }
     }
   }, {
